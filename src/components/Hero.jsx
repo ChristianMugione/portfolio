@@ -38,7 +38,7 @@ const StyledHero = styled.section`
 
   .hero-container {
     width: 90%;
-    max-width: 540px;
+    /* max-width: 540px; */
     max-height: 500px;
     display: flex;
     gap: 8px;
@@ -59,8 +59,7 @@ const StyledHero = styled.section`
     height: 100%;
     overflow: hidden;
     z-index: -1;
-    border-radius: 8px;
-    box-shadow: 0 0 15px -3px cyan;
+    max-height: 80vh;
   }
 
   .image img {
@@ -68,11 +67,13 @@ const StyledHero = styled.section`
     height: 100%;
     object-fit: cover;
     filter: brightness(10%);
+    overflow-clip-margin: unset;
+    overflow: unset;
   }
 
   @media (min-width: 576px) {
     .hero-container {
-      max-width: 720px;
+      /* max-width: 720px; */
     }
   }
 
@@ -89,7 +90,7 @@ const StyledHero = styled.section`
     }
 
     .hero-container {
-      max-width: 960px;
+      /* max-width: 960px; */
     }
 
     .text {
@@ -100,22 +101,24 @@ const StyledHero = styled.section`
       position: unset;
       width: 50%;
       z-index: 0;
+      border-radius: 8px;
 
       & img {
         filter: unset;
+        object-fit: cover;
       }
     }
   }
 
   @media (min-width: 992px) {
     .hero-container {
-      max-width: 1140px;
+      /* max-width: 1140px; */
     }
   }
 
   @media (min-width: 1200px) {
     .hero-container {
-      max-width: 1320px;
+      /* max-width: 1320px; */
     }
   }
 `;
