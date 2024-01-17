@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import christian from "../../public/christian-mugione.jpg";
 
 export const Hero = () => {
   return (
@@ -12,7 +13,7 @@ export const Hero = () => {
           </p>
         </div>
         <div className="image">
-          <img src="/hero-coding-future.jpeg" alt="" />
+          <img src={christian} alt="" />
         </div>
       </div>
     </StyledHero>
@@ -66,9 +67,10 @@ const StyledHero = styled.section`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: ;
     filter: brightness(10%);
     overflow-clip-margin: unset;
-    overflow: unset;
+    overflow: hidden;
   }
 
   @media (min-width: 576px) {

@@ -1,24 +1,11 @@
-import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const NavBar = () => {
+export const Navbar = () => {
   return (
-    <StyledNavBar>
-      <div className="title">Christian Mugione</div>
-      <div>Home Portfolio Contact</div>
-    </StyledNavBar>
+    <ul>
+      <Link to="/">Home</Link>
+      <Link to="/portfolio">Portfolio</Link>
+      <Link to="/contact">Contact</Link>
+    </ul>
   );
 };
-
-const StyledNavBar = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0 10px;
-  border-bottom: 1px solid white;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
