@@ -33,4 +33,9 @@ const StyledHeader = styled.header`
 
     /* background-color: lightgray; */
   }
+
+  .title {
+    cursor: pointer;
+    font-size: 1.2em;
+  }
 `;

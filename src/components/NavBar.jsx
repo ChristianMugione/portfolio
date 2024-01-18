@@ -1,11 +1,31 @@
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const Navbar = () => {
   return (
-    <ul>
-      <Link to="/">Home</Link>
-      <Link to="/portfolio">Portfolio</Link>
-      <Link to="/contact">Contact</Link>
-    </ul>
+    <StyledUl>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/portfolio">Portfolio</Link>
+      </li>
+      <li>
+        <Link to="/contact">Contact</Link>
+      </li>
+    </StyledUl>
   );
 };
+
+const StyledUl = styled.ul`
+  /* background-color: aliceblue; */
+  display: flex;
+  list-style: none;
+  padding-inline-start: 0;
+  font-size: 1.2em;
+  gap: 16px;
+
+  a {
+    color: #ffffffde;
+  }
+`;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import christian from "../../public/christian-mugione.jpg";
+import christian from "/public/hero-coding-future.jpeg";
 
 export const Hero = () => {
   return (
@@ -67,7 +67,7 @@ const StyledHero = styled.section`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: ;
+    /* object-position: ; */
     filter: brightness(10%);
     overflow-clip-margin: unset;
     overflow: hidden;
