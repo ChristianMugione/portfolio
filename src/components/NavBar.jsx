@@ -18,7 +18,6 @@ export const Navbar = () => {
 };
 
 const StyledUl = styled.ul`
-  /* background-color: aliceblue; */
   display: flex;
   list-style: none;
   padding-inline-start: 0;
@@ -27,5 +26,12 @@ const StyledUl = styled.ul`
 
   a {
     color: #ffffffde;
+    font-weight: 300;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: #ffffff55;
+    transition: 0.3s;
   }
 `;

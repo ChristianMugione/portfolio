@@ -80,8 +80,6 @@ const StyledHero = styled.section`
   }
 
   @media (min-width: 768px) {
-    background-color: #080607;
-
     h1,
     p {
       text-align: left;

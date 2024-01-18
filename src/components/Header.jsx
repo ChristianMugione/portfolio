@@ -15,6 +15,8 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   position: fixed;
+  color: #ffffffde;
+
   top: 0;
   left: 0;
   box-sizing: border-box;

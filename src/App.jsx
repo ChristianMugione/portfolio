@@ -11,8 +11,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" exact element={<Hero />} />
-        <Route path="/portfolio" exact element={<Portfolio />} />
-        <Route path="/contact" exact element={<Contact />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
   );
