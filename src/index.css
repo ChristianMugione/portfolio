@@ -29,6 +29,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
   box-sizing: border-box;
+
+  background-color: #080607;
+  @media (min-width: 768px) {
+  }
 }
 
 h1 {

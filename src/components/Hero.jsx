@@ -1,16 +1,23 @@
 import styled from "styled-components";
-import christian from "/public/hero-coding-future.jpeg";
+import christian from "/hero-coding-future.jpeg";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <StyledHero>
-      <div className="hero-container">
+      <div className="container">
         <div className="text">
           <h1>Coding Future.</h1>
           <p>
             Hello! My name is Christian Mugione. I love programming. I have a
             knack for problem-solving and enjoy working in teams.
           </p>
+          <div className="btns">
+            <button onClick={() => navigate("/portfolio")}>Portfolio</button>
+            <button onClick={() => navigate("/contact")}>Contact</button>
+          </div>
         </div>
         <div className="image">
           <img src={christian} alt="" />
@@ -21,12 +28,16 @@ export const Hero = () => {
 };
 
 const StyledHero = styled.section`
+  height: 100vh;
   color: #ddd;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-  height: 100vh;
+  background-image: url("../../public/hero-coding-future.jpeg");
+  background-size: cover;
+  background-position: center;
+  /* filter: brightness(10%); */
 
   h1,
   p {
@@ -37,22 +48,37 @@ const StyledHero = styled.section`
     font-size: 18px;
   }
 
-  .hero-container {
-    width: 90%;
+  .container {
+    /* width: 90%; */
     /* max-width: 540px; */
-    max-height: 500px;
+    /* max-height: 500px; */
     display: flex;
     gap: 8px;
   }
 
   .text {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #000000cc;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    margin-top: 20px;
   }
 
   .image {
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -67,20 +93,18 @@ const StyledHero = styled.section`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* object-position: ; */
-    filter: brightness(10%);
     overflow-clip-margin: unset;
     overflow: hidden;
   }
 
   @media (min-width: 576px) {
-    .hero-container {
+    .container {
       /* max-width: 720px; */
     }
   }
 
   @media (min-width: 768px) {
-    background-color: #080607;
+    background-image: none;
 
     h1,
     p {
@@ -91,15 +115,22 @@ const StyledHero = styled.section`
       font-size: 3em;
     }
 
-    .hero-container {
+    .container {
       /* max-width: 960px; */
     }
 
     .text {
+      position: relative;
+      top: unset;
+      left: unset;
+      background-color: transparent;
+      padding: 0;
       width: 50%;
+      height: auto;
     }
 
     .image {
+      display: flex;
       position: unset;
       width: 50%;
       z-index: 0;
@@ -113,13 +144,13 @@ const StyledHero = styled.section`
   }
 
   @media (min-width: 992px) {
-    .hero-container {
+    .container {
       /* max-width: 1140px; */
     }
   }
 
   @media (min-width: 1200px) {
-    .hero-container {
+    .container {
       /* max-width: 1320px; */
     }
   }
