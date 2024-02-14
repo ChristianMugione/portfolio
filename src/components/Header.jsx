@@ -22,6 +22,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(#080607 85%, #08060700 100%);
 
   .container {
     display: flex;
@@ -34,5 +35,6 @@ const StyledHeader = styled.header`
   .title {
     cursor: pointer;
     font-size: 1.2em;
+    /* color: var(--color-dark); */
   }
 `;

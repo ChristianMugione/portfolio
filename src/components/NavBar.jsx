@@ -27,5 +27,29 @@ const StyledUl = styled.ul`
 
   a {
     color: #ffffffde;
+    position: relative;
+  }
+
+  a::after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background-color: #9fd5df;
+    content: "";
+    transition: all 0.2s;
+  }
+
+  a:focus::after {
+    display: block;
+    position: absolute;
+
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #9fd5df;
+    content: "";
+    transition: all 0.2s;
   }
 `;

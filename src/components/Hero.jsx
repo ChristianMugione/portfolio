@@ -37,7 +37,6 @@ const StyledHero = styled.section`
   background-image: url("../../public/hero-coding-future.jpeg");
   background-size: cover;
   background-position: center;
-  /* filter: brightness(10%); */
 
   h1,
   p {
