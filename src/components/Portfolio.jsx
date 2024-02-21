@@ -26,6 +26,7 @@ export const Portfolio = () => {
 };
 
 const StyledSection = styled.main`
+  position: relative;
   width: 100%;
   min-height: 80vh;
   color: #ddd;

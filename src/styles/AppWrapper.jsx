@@ -6,6 +6,7 @@ export const AppWrapper = ({ children }) => {
 
 const StyledAppWrapper = styled.div`
   width: 100%;
+  background-color: #080607;
 
   .container {
     width: 98%;

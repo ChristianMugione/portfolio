@@ -21,6 +21,10 @@ export const Hero = () => {
         </div>
         <div className="image">
           <img src={christian} alt="" />
+          <span className="top"></span>
+          <span className="bottom"></span>
+          <span className="left"></span>
+          <span className="right"></span>
         </div>
       </div>
     </StyledHero>
@@ -33,8 +37,8 @@ const StyledHero = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  background-image: url("../../public/hero-coding-future.jpeg");
+  margin: 70px 0 0 0;
+  background-image: url("/hero-coding-future.jpeg");
   background-size: cover;
   background-position: center;
 
@@ -96,6 +100,46 @@ const StyledHero = styled.section`
     overflow: hidden;
   }
 
+  .top,
+  .bottom,
+  .left,
+  .right {
+    position: absolute;
+    background: white;
+  }
+
+  .top,
+  .bottom {
+    width: 100%;
+    height: 5%;
+  }
+
+  .left,
+  .right {
+    width: 5%;
+    height: 100%;
+  }
+
+  .top {
+    top: 0;
+    background: linear-gradient(0deg, transparent, #080607);
+  }
+
+  .bottom {
+    bottom: 0;
+    background: linear-gradient(180deg, transparent, #080607);
+  }
+
+  .left {
+    left: 0;
+    background: linear-gradient(270deg, transparent, #080607);
+  }
+
+  .right {
+    right: 0;
+    background: linear-gradient(90deg, transparent, #080607);
+  }
+
   @media (min-width: 576px) {
     .container {
       /* max-width: 720px; */
@@ -130,7 +174,7 @@ const StyledHero = styled.section`
 
     .image {
       display: flex;
-      position: unset;
+      position: relative;
       width: 50%;
       z-index: 0;
       border-radius: 8px;
