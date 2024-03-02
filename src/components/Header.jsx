@@ -48,7 +48,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   display: flex;
@@ -59,6 +59,7 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: center;
   background: linear-gradient(#080607 85%, #08060700 100%);
+  z-index: 1;
 
   /*  &::after {
     position: absolute;
@@ -68,7 +69,6 @@ const StyledHeader = styled.header`
     display: ${(props) => props.opened};
     
     // background-color: lightgray; 
-    z-index: 1;
     
     backdrop-filter: blur(4px);
     content: "";

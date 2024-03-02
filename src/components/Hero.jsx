@@ -9,14 +9,18 @@ export const Hero = () => {
     <StyledHero>
       <div className="container">
         <div className="text">
-          <h1>Coding Future.</h1>
+          <h1>Codeando el Futuro.</h1>
           <p>
+            Hola! Mi nombre es Christian Mugione. Amo la programación. Tengo
+            facilidad para resolver problemas y trabajar en equipo.
+          </p>
+          {/* <p>
             Hello! My name is Christian Mugione. I love programming. I have a
             knack for problem-solving and enjoy working in teams.
-          </p>
+          </p> */}
           <div className="btns">
             <button onClick={() => navigate("/portfolio")}>Portfolio</button>
-            <button onClick={() => navigate("/contact")}>Contact</button>
+            <button onClick={() => navigate("/contact")}>Contacto</button>
           </div>
         </div>
         <div className="image">

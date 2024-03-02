@@ -1,8 +1,9 @@
 export const projectsData = [
   {
     key: 4,
-    name: "This Portfolio",
-    description: "Made with React, Styled Components, Formik, React Icons",
+    name: "Este Portfolio",
+    description:
+      "Hecho con React, utilicé Styled Components para los estilos, Formik para el formulario de contacto y React Icons para algunos detalles",
     imageURL: "/portfolio.png",
     codeURL: "https://github.com/ChristianMugione/portfolio",
     siteURL: "https://mugione-portfolio.vercel.app/",
@@ -11,7 +12,7 @@ export const projectsData = [
     key: 3,
     name: "React eCommerce",
     description:
-      "Coded in React. I used Redux, Styled Components, Formik and some hooks to make this sample eCommerce",
+      "Realizado en React. Usé Redux Toolkit, Styled Components, Formik y algunos hooks para hacer este ejemplo de eCommerce",
     imageURL: "/rutacamper.png",
     codeURL: "https://github.com/ChristianMugione/react-e1",
     siteURL: "https://mugione-react-e1.vercel.app/",
@@ -19,7 +20,8 @@ export const projectsData = [
   {
     key: 1,
     name: "Tetris",
-    description: "Coded in Javascript Vanilla. ",
+    description:
+      "Hecho en Javascript Vanilla. Fue un desafío que me puse para afianzar los conocimientos en JS cuando estaba promediando los estudios",
     imageURL: "/tetris.png",
     codeURL: "https://github.com/ChristianMugione/Proyecto-Tetris",
     siteURL: "https://proyecto-tetris-mugione.vercel.app/",
@@ -27,8 +29,7 @@ export const projectsData = [
   {
     key: 2,
     name: "Todo List",
-    description:
-      "Coded in React. Very simple version using useState and useEffect hooks",
+    description: "Una version muy simple de un TO DO LIST, hecho en React.",
     imageURL: "/todolist.png",
     codeURL: "https://github.com/ChristianMugione/mi-app",
     siteURL: "https://mugione-react-todo-list.vercel.app/",

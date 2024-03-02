@@ -1,9 +1,35 @@
 import styled from "styled-components";
-import { BsArrowRightShort } from "react-icons/bs";
 import { BsCaretRightFill } from "react-icons/bs";
+import { useFormik } from "formik";
+import validationSchema from "../formik/validationSchema";
 
 export const Contact = () => {
   const copyBtn = document.getElementById("copy-btn");
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      try {
+        fetch("https://formsubmit.co/kricho@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
+      } catch (error) {
+        console.error(error);
+      }
+      // abre modal de confirmacion de mensaje enviado
+      //settimeout que cierre el modal a los 5 segundos
+      formik.resetForm();
+    },
+  });
 
   const copyMail = () => {
     navigator.clipboard.writeText("chmugione@gmail.com");
@@ -26,11 +52,43 @@ export const Contact = () => {
           </div>
         </div>
         <h4>or</h4>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={formik.handleSubmit}>
           <div className="form-row">
-            <BsCaretRightFill />
-            <input type="text" id="name" placeholder="Name" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              {...formik.getFieldProps("name")}
+            />
+            {formik.touched.name && formik.errors.name && (
+              <div className="error-msg">{formik.errors.name}</div>
+            )}
           </div>
+          <div className="form-row">
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="E-Mail"
+              {...formik.getFieldProps("email")}
+            />
+            {formik.touched.email && formik.errors.email && (
+              <div className="error-msg">{formik.errors.email}</div>
+            )}
+          </div>
+          <div className="form-row">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your message"
+              {...formik.getFieldProps("message")}
+            />
+            {formik.touched.message && formik.errors.message && (
+              <div className="error-msg">{formik.errors.message}</div>
+            )}
+          </div>
+          <button type="submit">ENVIAR</button>
         </form>
       </div>
     </StyledContact>
@@ -42,7 +100,7 @@ const StyledContact = styled.section`
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin: 70px 0 0 0;
   color: #ddd;
 
@@ -94,13 +152,33 @@ const StyledContact = styled.section`
   .contact-form {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 8px;
   }
 
   .form-row {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 6px;
+    min-height: 50px;
+
+    width: 80%;
+
+    input {
+      width: 100%;
+      height: 30px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 60px;
+    }
+  }
+
+  .error-msg {
+    font-size: 0.8em;
   }
 
   @media (min-width: 576px) {
@@ -111,11 +189,16 @@ const StyledContact = styled.section`
 
   @media (min-width: 768px) {
     background-image: none;
+    align-items: center;
+    margin: 0;
 
     h2,
-    h4,
     p {
       text-align: left;
+    }
+
+    h4 {
+      display: none;
     }
 
     h2 {
@@ -124,6 +207,7 @@ const StyledContact = styled.section`
 
     .container {
       /* max-width: 960px; */
+      flex-direction: row;
     }
 
     .text {

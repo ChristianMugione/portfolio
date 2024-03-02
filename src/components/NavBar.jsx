@@ -14,7 +14,7 @@ export const Navbar = () => {
     <StyledUl>
       <li>
         <Link to="/" onClick={closeMenuFnc}>
-          Home
+          Inicio
         </Link>
       </li>
       <li>
@@ -24,7 +24,7 @@ export const Navbar = () => {
       </li>
       <li>
         <Link to="/contact" onClick={closeMenuFnc}>
-          Contact
+          Contacto
         </Link>
       </li>
     </StyledUl>

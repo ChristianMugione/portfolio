@@ -13,10 +13,10 @@ export const Project = ({ name, description, imageURL, siteURL, codeURL }) => {
         </div>
         <div className="info-btns">
           <Link to={codeURL} target="_blank">
-            View Code <BsBoxArrowUpRight />
+            Ver código <BsBoxArrowUpRight />
           </Link>
           <Link to={siteURL} target="_blank">
-            Visit Site <BsBoxArrowUpRight />
+            Visitar <BsBoxArrowUpRight />
           </Link>
         </div>
       </div>
@@ -40,7 +40,7 @@ const StyledProject = styled.div`
     }
 
     p {
-      min-height: 80px;
+      min-height: 100px;
     }
   }
 
