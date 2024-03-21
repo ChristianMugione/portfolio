@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Navbar } from "./Navbar.jsx";
+import { Navbar } from "./NavBar.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu, openMenu } from "../redux/reducer";
 import { FaBars } from "react-icons/fa";
