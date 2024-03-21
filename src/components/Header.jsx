@@ -61,7 +61,8 @@ const StyledHeader = styled.header`
   background: linear-gradient(#080607 85%, #08060700 100%);
   z-index: 1;
 
-  /*  &::after {
+  /*  
+    &::after {
     position: absolute;
     top: 60px;
     height: calc(100dvh - 60px);
