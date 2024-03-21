@@ -44,9 +44,9 @@ const StyledSection = styled.main`
     width: 100%;
     flex-wrap: wrap;
     /* flex-direction: row; */
-    gap: 8px;
+    gap: 1vw;
     padding: 8px;
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 `;

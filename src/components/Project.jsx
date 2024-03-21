@@ -26,8 +26,9 @@ export const Project = ({ name, description, imageURL, siteURL, codeURL }) => {
 
 const StyledProject = styled.div`
   display: flex;
-  border-radius: 4px;
-  box-shadow: 0 0 3px 0 white;
+  border-radius: 12px;
+  box-shadow: 0 0 20px -5px grey;
+  overflow: hidden;
 
   .info {
     width: 300px;
@@ -37,6 +38,7 @@ const StyledProject = styled.div`
 
     h2 {
       text-align: center;
+      background: transparent;
     }
 
     p {
@@ -61,7 +63,7 @@ const StyledProject = styled.div`
     height: 140px;
     overflow: hidden;
     padding: 0;
-    border-radius: 4px;
+    border-radius: 8px;
     box-shadow: 0 0 5px black;
   }
 

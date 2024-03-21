@@ -48,7 +48,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
