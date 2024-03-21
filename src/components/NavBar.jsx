@@ -38,7 +38,7 @@ const StyledUl = styled.ul`
   align-items: center;
   position: absolute;
   top: 40px;
-  right: 0;
+  right: 50%;
   list-style: none;
   padding-inline-start: 0;
   font-size: 1.2em;
@@ -46,10 +46,14 @@ const StyledUl = styled.ul`
   width: 100%;
   transform: translateX(50%);
   transition: all 0.2s;
+  z-index: 1;
 
   a {
     color: #ffffffde;
     position: relative;
+    height: 50px;
+
+    /* border: 1px solid white; */
   }
 
   @media (min-width: 768px) {

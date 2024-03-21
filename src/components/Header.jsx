@@ -3,19 +3,22 @@ import { Navbar } from "./NavBar";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu, openMenu } from "../redux/reducer";
 import { FaBars } from "react-icons/fa";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
+  const [opened, setOpened] = useState("flex");
   const menuOpened = useSelector((state) => state.menuReducer.menuOpened);
   const dispatch = useDispatch();
-  const opened = { is: "flex" };
+  const opened1 = { is: "flex" };
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         dispatch(openMenu());
+        setOpened("none");
       } else {
         dispatch(closeMenu());
+        setOpened("flex");
       }
     };
 
@@ -26,16 +29,22 @@ export const Header = () => {
     };
   }, [dispatch]);
 
-  const toggleMenu = () => {};
-
+  const toggleMenu = () => {
+    if (!menuOpened) {
+      dispatch(openMenu());
+      setOpened("flex");
+    } else {
+      dispatch(closeMenu());
+      setOpened("none");
+    }
+  };
+  /*
   if (menuOpened) {
-    opened.is = "flex";
   } else {
-    opened.is = "none";
   }
-
+*/
   return (
-    <StyledHeader opened={opened.is}>
+    <StyledHeader opened={opened}>
       <div className="container">
         <div className="title">Christian Mugione</div>
         {menuOpened && <Navbar />}
@@ -61,24 +70,24 @@ const StyledHeader = styled.header`
   background: linear-gradient(#080607 85%, #08060700 100%);
   z-index: 1;
 
-  /*  
-    &::after {
+  &::after {
     position: absolute;
     top: 60px;
     height: calc(100dvh - 60px);
     width: 100%;
     display: ${(props) => props.opened};
-    
-    // background-color: lightgray; 
-    
+
+    // background-color: lightgray;
+
     backdrop-filter: blur(4px);
     content: "";
-  }*/
+  }
 
   .container {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /* border: 1px solid white; */
 
     /* background-color: lightgray; */
   }
@@ -89,7 +98,15 @@ const StyledHeader = styled.header`
     color: white;
   }
 
+  .burger-btn {
+    position: absolute;
+    right: 10px;
+  }
+
   @media (min-width: 768px) {
+    .container {
+      justify-content: space-between;
+    }
     .burger-btn {
       display: none;
     }
