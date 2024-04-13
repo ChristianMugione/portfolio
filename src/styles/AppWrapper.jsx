@@ -8,6 +8,10 @@ const StyledAppWrapper = styled.div`
   width: 100%;
   background-color: #080607;
 
+  @media (max-width: 319px) {
+    display: none;
+  }
+
   .container {
     width: 98%;
 

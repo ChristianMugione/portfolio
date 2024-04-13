@@ -1,42 +1,48 @@
 import styled from "styled-components";
 import christian from "/hero-coding-future.jpeg";
 import { useNavigate } from "react-router-dom";
+import { Portfolio } from "./Portfolio";
+import { Contact } from "./Contact";
 
 export const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <StyledHero>
-      <div className="container">
-        <div className="text">
-          <h1>Codeando el Futuro.</h1>
-          <p>
-            Hola! Mi nombre es Christian Mugione. Amo la programación. Tengo
-            facilidad para resolver problemas y trabajar en equipo.
-          </p>
-          {/* <p>
+    <>
+      <StyledHero>
+        <div className="container">
+          <div className="text">
+            <h1>Codeando el Futuro.</h1>
+            <p>
+              Hola! Mi nombre es Christian Mugione. Amo la programación. Tengo
+              facilidad para resolver problemas y trabajar en equipo.
+            </p>
+            {/* <p>
             Hello! My name is Christian Mugione. I love programming. I have a
             knack for problem-solving and enjoy working in teams.
           </p> */}
-          <div className="btns">
-            <button onClick={() => navigate("/portfolio")}>Portfolio</button>
-            <button onClick={() => navigate("/contact")}>Contacto</button>
+            <div className="btns">
+              <button onClick={() => navigate("/portfolio")}>Portfolio</button>
+              <button onClick={() => navigate("/contact")}>Contacto</button>
+            </div>
+          </div>
+          <div className="image">
+            <img src={christian} alt="" />
+            <span className="top"></span>
+            <span className="bottom"></span>
+            <span className="left"></span>
+            <span className="right"></span>
           </div>
         </div>
-        <div className="image">
-          <img src={christian} alt="" />
-          <span className="top"></span>
-          <span className="bottom"></span>
-          <span className="left"></span>
-          <span className="right"></span>
-        </div>
-      </div>
-    </StyledHero>
+      </StyledHero>
+      <Portfolio />
+      <Contact />
+    </>
   );
 };
 
 const StyledHero = styled.section`
-  height: 100vh;
+  height: 89dvh;
   color: #ddd;
   display: flex;
   justify-content: center;
@@ -45,6 +51,7 @@ const StyledHero = styled.section`
   background-image: url("/hero-coding-future.jpeg");
   background-size: cover;
   background-position: center;
+  /* border: 1px solid white; */
 
   h1,
   p {
@@ -78,7 +85,7 @@ const StyledHero = styled.section`
 
   .btns {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 8px;
     width: 100%;
     margin-top: 20px;
@@ -174,6 +181,10 @@ const StyledHero = styled.section`
       padding: 0;
       width: 50%;
       height: auto;
+    }
+
+    .btns {
+      justify-content: flex-start;
     }
 
     .image {

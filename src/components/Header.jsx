@@ -9,7 +9,7 @@ export const Header = () => {
   const [opened, setOpened] = useState("flex");
   const menuOpened = useSelector((state) => state.menuReducer.menuOpened);
   const dispatch = useDispatch();
-  const opened1 = { is: "flex" };
+  // const opened1 = { is: "flex" };
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,13 +38,9 @@ export const Header = () => {
       setOpened("none");
     }
   };
-  /*
-  if (menuOpened) {
-  } else {
-  }
-*/
+
   return (
-    <StyledHeader opened={opened}>
+    <StyledHeader opened={menuOpened}>
       <div className="container">
         <div className="title">Christian Mugione</div>
         {menuOpened && <Navbar />}
@@ -75,7 +71,9 @@ const StyledHeader = styled.header`
     top: 60px;
     height: calc(100dvh - 60px);
     width: 100%;
-    display: ${(props) => props.opened};
+    /* display: ${(props) => props.opened}; */
+    display: ${(props) => (props.opened ? "flex" : "none")};
+    /* display: none; */
 
     // background-color: lightgray;
 
@@ -101,9 +99,13 @@ const StyledHeader = styled.header`
   .burger-btn {
     position: absolute;
     right: 10px;
+    cursor: pointer;
   }
 
   @media (min-width: 768px) {
+    &::after {
+      display: none;
+    }
     .container {
       justify-content: space-between;
     }
