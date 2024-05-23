@@ -1,5 +1,14 @@
 export const projectsData = [
   {
+    key: 5,
+    name: "Yet Another Weather App",
+    description:
+      "Otra aplicación del clima. Hecha con: React, Redux, Vite, Vitest y consumiendo la API de OpenWeatherMap.org",
+    imageURL: "/yawa.png",
+    codeURL: "https://github.com/ChristianMugione/yawa",
+    siteURL: "https://yawa.christianmugione.com.ar/",
+  },
+  {
     key: 4,
     name: "Este Portfolio",
     description:
