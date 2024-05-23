@@ -5,7 +5,7 @@ import { projectsData } from "../data/ProjectsData";
 export const Portfolio = () => {
   return (
     <StyledSection>
-      <h2>PORTFOLIO</h2>
+      <h2>Mis Proyectos</h2>
       {/* <Project name="Hola" description="descripcion loca" /> */}
       <div className="container">
         {projectsData.map((data) => {

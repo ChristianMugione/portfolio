@@ -27,7 +27,7 @@ export const Project = ({ name, description, imageURL, siteURL, codeURL }) => {
 const StyledProject = styled.div`
   display: flex;
   border-radius: 12px;
-  box-shadow: 0 0 20px -5px grey;
+  box-shadow: 1px 1px 3px grey;
   overflow: hidden;
 
   .info {

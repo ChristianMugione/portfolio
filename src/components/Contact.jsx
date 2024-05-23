@@ -43,7 +43,7 @@ export const Contact = () => {
     <StyledContact>
       <div className="container">
         <div className="text">
-          <h2>Contact me</h2>
+          <h2>Contactame</h2>
           <div className="email-section">
             <label>chmugione@gmail.com</label>
             <button id="copy-btn" onClick={copyMail}>
@@ -101,7 +101,7 @@ const StyledContact = styled.section`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 70px 0 0 0;
+  margin: 30px 0 0 0;
   color: #ddd;
 
   h2,
@@ -191,6 +191,8 @@ const StyledContact = styled.section`
     background-image: none;
     align-items: center;
     margin: 0;
+    height: auto;
+    padding: 30px 0;
 
     h2,
     p {
@@ -221,6 +223,7 @@ const StyledContact = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
     }
 
     .email-section {
@@ -230,7 +233,7 @@ const StyledContact = styled.section`
       width: 100%;
       display: flex;
       justify-content: center;
-      background-color: darkblue;
+      /* background-color: darkblue; */
     }
   }
 `;
