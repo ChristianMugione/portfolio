@@ -26,12 +26,13 @@ export const Project = ({ name, description, imageURL, siteURL, codeURL }) => {
 
 const StyledProject = styled.div`
   display: flex;
-  border-radius: 12px;
-  box-shadow: 0 0 20px -5px grey;
+  /* max-width: 310px; */
+  border-radius: 8px;
+  box-shadow: 1px 1px 3px grey;
   overflow: hidden;
 
   .info {
-    width: 300px;
+    width: 100%;
     background: linear-gradient(200deg, #111111, #333333);
     border-radius: 4px;
     padding: 8px;

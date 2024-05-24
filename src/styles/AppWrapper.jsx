@@ -6,7 +6,7 @@ export const AppWrapper = ({ children }) => {
 
 const StyledAppWrapper = styled.div`
   width: 100%;
-  background-color: #080607;
+  background-color: var(--bg-100);
 
   @media (max-width: 319px) {
     display: none;

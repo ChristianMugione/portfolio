@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import christian from "/hero-coding-future.jpeg";
+import coder from "/hero-coding-future.jpeg";
 import { useNavigate } from "react-router-dom";
 import { Portfolio } from "./Portfolio";
 import { Contact } from "./Contact";
@@ -27,7 +27,7 @@ export const Hero = () => {
             </div>
           </div>
           <div className="image">
-            <img src={christian} alt="" />
+            <img src={coder} alt="" />
             <span className="top"></span>
             <span className="bottom"></span>
             <span className="left"></span>
@@ -43,7 +43,7 @@ export const Hero = () => {
 
 const StyledHero = styled.section`
   height: 89dvh;
-  color: #ddd;
+  color: var(--text-200);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,20 +52,24 @@ const StyledHero = styled.section`
   background-size: cover;
   background-position: center;
   /* border: 1px solid white; */
+  font-size: 18px;
 
   h1,
   p {
     text-align: center;
+    color: var(--text);
+  }
+
+  h1 {
+    font-size: 1.5em;
   }
 
   p {
-    font-size: 18px;
+    font-size: 0.8em;
+    /* max-width: 290px; */
   }
 
   .container {
-    /* width: 90%; */
-    /* max-width: 540px; */
-    /* max-height: 500px; */
     display: flex;
     gap: 8px;
   }
@@ -77,10 +81,10 @@ const StyledHero = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #000000cc;
     padding: 20px;
     box-sizing: border-box;
     height: 100%;
+    backdrop-filter: brightness(10%);
   }
 
   .btns {
@@ -133,22 +137,22 @@ const StyledHero = styled.section`
 
   .top {
     top: 0;
-    background: linear-gradient(0deg, transparent, #080607);
+    background: linear-gradient(0deg, transparent, var(--bg-dark));
   }
 
   .bottom {
     bottom: 0;
-    background: linear-gradient(180deg, transparent, #080607);
+    background: linear-gradient(180deg, transparent, var(--bg-dark));
   }
 
   .left {
     left: 0;
-    background: linear-gradient(270deg, transparent, #080607);
+    background: linear-gradient(270deg, transparent, var(--bg-dark));
   }
 
   .right {
     right: 0;
-    background: linear-gradient(90deg, transparent, #080607);
+    background: linear-gradient(90deg, transparent, var(--bg-dark));
   }
 
   @media (min-width: 576px) {
@@ -166,7 +170,7 @@ const StyledHero = styled.section`
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 2.3em;
     }
 
     .container {
@@ -177,10 +181,10 @@ const StyledHero = styled.section`
       position: relative;
       top: unset;
       left: unset;
-      background-color: transparent;
       padding: 0;
       width: 50%;
       height: auto;
+      backdrop-filter: unset;
     }
 
     .btns {
