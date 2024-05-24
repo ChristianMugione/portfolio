@@ -39,14 +39,20 @@ const StyledSection = styled.main`
   /* border: 1px solid red; */
 
   .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: center;
     width: 100%;
-    flex-wrap: wrap;
-    /* flex-direction: row; */
     gap: 1vw;
     padding: 8px;
     box-sizing: border-box;
-    /* overflow: hidden; */
+
+    /* @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    } */
   }
 `;
