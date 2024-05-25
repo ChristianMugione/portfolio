@@ -39,8 +39,8 @@ const StyledSection = styled.main`
   /* border: 1px solid red; */
 
   .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
     gap: 1vw;
@@ -49,10 +49,9 @@ const StyledSection = styled.main`
 
     /* @media (min-width: 768px) {
       grid-template-columns: 1fr 1fr;
-    }
-
-    @media (min-width: 992px) {
-      grid-template-columns: 1fr 1fr 1fr;
+    }*/
+    /* @media (min-width: 992px) {
+      flex-direction: row;
     } */
   }
 `;

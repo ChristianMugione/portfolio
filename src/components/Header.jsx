@@ -100,6 +100,7 @@ const StyledHeader = styled.header`
     position: absolute;
     right: 10px;
     cursor: pointer;
+    color: white;
   }
 
   @media (min-width: 768px) {
