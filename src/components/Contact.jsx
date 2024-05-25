@@ -190,7 +190,7 @@ const StyledContact = styled.section`
   @media (min-width: 768px) {
     background-image: none;
     align-items: center;
-    margin: 0;
+    /* margin: 0; */
     height: auto;
     padding: 30px 0;
 
