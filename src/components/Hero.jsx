@@ -12,7 +12,7 @@ export const Hero = () => {
       <StyledHero>
         <div className="container">
           <div className="text">
-            <h1>Codeando el Futuro.</h1>
+            <h1>Codeando el Futuro</h1>
             <p>
               Hola! Mi nombre es Christian Mugione. Amo la programación. Tengo
               facilidad para resolver problemas y trabajar en equipo.
@@ -85,6 +85,14 @@ const StyledHero = styled.section`
     box-sizing: border-box;
     height: 100%;
     backdrop-filter: brightness(10%);
+    text-align: left;
+  }
+
+  .text h1 {
+    width: fit-content;
+    background: linear-gradient(90deg, #4e758a, #d2e8f0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .btns {
@@ -93,6 +101,26 @@ const StyledHero = styled.section`
     gap: 8px;
     width: 100%;
     margin-top: 20px;
+  }
+
+  .btns button,
+  .btns button:first-child:hover {
+    padding: 8px 10px;
+    border: 1px solid #f0f0f0;
+    background-color: transparent;
+    color: #f0f0f0;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .btns button:first-child,
+  .btns button:hover {
+    border: 1px solid transparent;
+    background-color: #f0f0f0;
+    color: #080607;
+    transition: all 0.2s ease;
   }
 
   .image {
