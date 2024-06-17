@@ -15,8 +15,8 @@ function App() {
         <Route path="/" exact element={<Hero />} />
         <Route path="/portfolio" exact element={<Portfolio />} />
         <Route path="/contact" exact element={<Contact />} />
-        <SpeedInsights />
       </Routes>
+      <SpeedInsights />
     </AppWrapper>
   );
 }
