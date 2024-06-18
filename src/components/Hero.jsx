@@ -92,7 +92,6 @@ const StyledHero = styled.section`
   }
 
   .text h1 {
-    width: fit-content;
     background: linear-gradient(90deg, #4e758a, #d2e8f0);
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -240,6 +239,11 @@ const StyledHero = styled.section`
     h1,
     p {
       text-align: left;
+    }
+
+    .text {
+      align-items: flex-start;
+      font-size: 1.5em;
     }
 
     .container {
