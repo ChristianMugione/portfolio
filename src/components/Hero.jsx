@@ -61,7 +61,9 @@ const StyledHero = styled.section`
   }
 
   h1 {
-    font-size: 1.5em;
+    font-size: 2em;
+    line-height: 1;
+    margin-bottom: 12px;
   }
 
   p {
@@ -81,6 +83,7 @@ const StyledHero = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 20px;
     box-sizing: border-box;
     height: 100%;
@@ -234,6 +237,11 @@ const StyledHero = styled.section`
   }
 
   @media (min-width: 992px) {
+    h1,
+    p {
+      text-align: left;
+    }
+
     .container {
       /* max-width: 1140px; */
     }

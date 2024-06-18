@@ -6,8 +6,17 @@ import { Contact } from "./components/Contact";
 import { Portfolio } from "./components/Portfolio";
 import { AppWrapper } from "./styles/AppWrapper";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { closeMenu } from "./redux/reducer";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(closeMenu());
+  }, []);
+
   return (
     <AppWrapper>
       <Header />
