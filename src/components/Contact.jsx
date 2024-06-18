@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { BsCaretRightFill } from "react-icons/bs";
 import { useFormik } from "formik";
 import validationSchema from "../formik/validationSchema";
 
@@ -43,7 +42,7 @@ export const Contact = () => {
     <StyledContact>
       <div className="container">
         <div className="text">
-          <h2>Contactame</h2>
+          <h2>Contáctame</h2>
           <p>¿Tienes una pregunta o quieres trabajar juntos?</p>
           <div className="email-section">
             <label>chmugione@gmail.com</label>
@@ -102,7 +101,7 @@ const StyledContact = styled.section`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 30px 0 0 0;
+  margin: 60px 0 0 0;
   color: #ddd;
 
   h2,
@@ -113,6 +112,9 @@ const StyledContact = styled.section`
   h2 {
     font-size: 2em;
     padding-top: 0;
+    background: linear-gradient(90deg, #4e758a, #d2e8f0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   p {
@@ -168,7 +170,10 @@ const StyledContact = styled.section`
     gap: 8px;
 
     & button {
-      width: 80%;
+      width: 81%;
+      height: 30px;
+      background-color: #ddd;
+      margin-top: 6px;
 
       &:hover {
         cursor: pointer;
