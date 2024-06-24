@@ -39,7 +39,7 @@ export const Contact = () => {
   };
 
   return (
-    <StyledContact>
+    <StyledContact id="contact">
       <div className="container">
         <div className="text">
           <h2>Contáctame</h2>
@@ -58,7 +58,7 @@ export const Contact = () => {
               type="text"
               id="name"
               name="name"
-              placeholder="Name"
+              placeholder="Nombre"
               {...formik.getFieldProps("name")}
             />
             {formik.touched.name && formik.errors.name && (
@@ -70,7 +70,7 @@ export const Contact = () => {
               type="text"
               id="email"
               name="email"
-              placeholder="E-Mail"
+              placeholder="Email"
               {...formik.getFieldProps("email")}
             />
             {formik.touched.email && formik.errors.email && (
@@ -81,7 +81,7 @@ export const Contact = () => {
             <textarea
               id="message"
               name="message"
-              placeholder="Your message"
+              placeholder="Su mensaje"
               {...formik.getFieldProps("message")}
             />
             {formik.touched.message && formik.errors.message && (
@@ -97,12 +97,13 @@ export const Contact = () => {
 
 const StyledContact = styled.section`
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 60px 0 0 0;
+  padding: 60px 0 0 0;
   color: #ddd;
+  background: var(--bg-1);
 
   h2,
   p {
@@ -111,10 +112,12 @@ const StyledContact = styled.section`
 
   h2 {
     font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
     padding-top: 0;
-    background: linear-gradient(90deg, #4e758a, #d2e8f0);
+    /* background: linear-gradient(90deg, #4e758a, #d2e8f0);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
   }
 
   p {
@@ -128,6 +131,8 @@ const StyledContact = styled.section`
     /* max-height: 500px; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 8px;
   }
 
@@ -162,21 +167,26 @@ const StyledContact = styled.section`
   }
 
   .contact-form {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 8px;
+    background: #4e758a;
 
     & button {
-      width: 81%;
+      width: 80%;
       height: 30px;
       background-color: #ddd;
-      margin-top: 6px;
+      border: none;
 
       &:hover {
         cursor: pointer;
+        box-shadow: 0 0 5px #ddd;
       }
 
       &:active {
@@ -189,13 +199,31 @@ const StyledContact = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 50px;
+    /* min-height: 50px; */
+    width: 100%;
+    position: relative;
+    border: none;
 
-    width: 80%;
+    & > * {
+      border-radius: 4px;
+      width: 100%;
+      padding: 0.3em 0.6em;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 18px;
+
+      &:focus {
+        outline: none;
+      }
+    }
 
     input {
       width: 100%;
       height: 30px;
+      border: none;
+
+      &::placeholder {
+        font-size: 0.8em;
+      }
     }
 
     textarea {
@@ -205,7 +233,13 @@ const StyledContact = styled.section`
   }
 
   .error-msg {
+    text-align: right;
     font-size: 0.8em;
+    font-style: italic;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    color: #ff0000aa;
   }
 
   @media (min-width: 576px) {
@@ -215,16 +249,11 @@ const StyledContact = styled.section`
   }
 
   @media (min-width: 768px) {
-    background-image: none;
+    /* background-image: none; */
     align-items: center;
     /* margin: 0; */
-    height: auto;
+    /* height: auto; */
     padding: 30px 0;
-
-    h2,
-    p {
-      /* text-align: left; */
-    }
 
     h4 {
       display: none;

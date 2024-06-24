@@ -13,19 +13,19 @@ export const Navbar = () => {
   return (
     <StyledUl>
       <li>
-        <Link to="/" onClick={closeMenuFnc}>
+        <a href="#hero" onClick={closeMenuFnc}>
           Inicio
-        </Link>
+        </a>
       </li>
       <li>
-        <Link to="/portfolio" onClick={closeMenuFnc}>
-          Portfolio
-        </Link>
+        <a href="#trabajos" onClick={closeMenuFnc}>
+          Trabajos
+        </a>
       </li>
       <li>
-        <Link to="/contact" onClick={closeMenuFnc}>
+        <a href="#contact" onClick={closeMenuFnc}>
           Contacto
-        </Link>
+        </a>
       </li>
     </StyledUl>
   );
@@ -77,7 +77,7 @@ const StyledUl = styled.ul`
       transition: all 0.2s;
     }
 
-    a:focus::after {
+    a:hover::after {
       display: block;
       position: absolute;
 

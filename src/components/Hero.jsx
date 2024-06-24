@@ -3,27 +3,33 @@ import coder from "/hero-coding-future.jpeg";
 import { useNavigate } from "react-router-dom";
 import { Portfolio } from "./Portfolio";
 import { Contact } from "./Contact";
+import { BsTwitterX, BsYoutube } from "react-icons/bs";
 
 export const Hero = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <StyledHero>
+      <StyledHero id="hero">
         <div className="container">
           <div className="text">
-            <h1>Codeando el Futuro</h1>
+            <h1>PROGRAMANDO FUTURO</h1>
             <p>
               Hola! Mi nombre es Christian Mugione. Amo la programación. Tengo
               facilidad para resolver problemas y trabajar en equipo.
             </p>
-            {/* <p>
-            Hello! My name is Christian Mugione. I love programming. I have a
-            knack for problem-solving and enjoy working in teams.
-          </p> */}
+
             <div className="btns">
-              <button onClick={() => navigate("/portfolio")}>Portfolio</button>
-              <button onClick={() => navigate("/contact")}>Contacto</button>
+              <a href="#trabajos">
+                <button>Portfolio</button>
+              </a>
+              <a href="#contact">
+                <button>Contacto</button>
+              </a>
+            </div>
+            <div className="social">
+              <BsTwitterX />
+              <BsYoutube />
             </div>
           </div>
           <div className="image">
@@ -53,6 +59,19 @@ const StyledHero = styled.section`
   background-position: center;
   /* border: 1px solid white; */
   font-size: 18px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-color: #08060711;
+    backdrop-filter: brightness(20%) blur(4px);
+    z-index: 0;
+  }
 
   h1,
   p {
@@ -74,6 +93,10 @@ const StyledHero = styled.section`
   .container {
     display: flex;
     gap: 8px;
+    height: 100dvh;
+    width: 100dvw;
+    /* border: 1px solid #f0f0f0; */
+    padding: 1px;
   }
 
   .text {
@@ -84,11 +107,11 @@ const StyledHero = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 2%;
     box-sizing: border-box;
     height: 100%;
-    backdrop-filter: brightness(10%);
     text-align: left;
+    z-index: 1;
   }
 
   .text h1 {
@@ -185,6 +208,20 @@ const StyledHero = styled.section`
     background: linear-gradient(90deg, transparent, var(--bg-dark));
   }
 
+  .social {
+    position: absolute;
+    bottom: 5dvh;
+
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+
+    svg {
+      color: #ffffffde;
+      font-size: 1.2em;
+    }
+  }
+
   @media (min-width: 576px) {
     .container {
       /* max-width: 720px; */
@@ -193,6 +230,10 @@ const StyledHero = styled.section`
 
   @media (min-width: 768px) {
     background-image: none;
+
+    &::after {
+      display: none;
+    }
 
     h1,
     p {
@@ -205,6 +246,7 @@ const StyledHero = styled.section`
 
     .container {
       /* max-width: 960px; */
+      position: relative;
     }
 
     .text {
@@ -213,7 +255,7 @@ const StyledHero = styled.section`
       left: unset;
       padding: 0;
       width: 50%;
-      height: auto;
+      height: 80%;
       backdrop-filter: unset;
     }
 
@@ -233,6 +275,12 @@ const StyledHero = styled.section`
         object-fit: cover;
       }
     }
+
+    .social {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 
   @media (min-width: 992px) {
@@ -243,7 +291,7 @@ const StyledHero = styled.section`
 
     .text {
       align-items: flex-start;
-      font-size: 1.5em;
+      font-size: 1.2em;
     }
 
     .container {

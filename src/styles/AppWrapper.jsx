@@ -14,6 +14,7 @@ const StyledAppWrapper = styled.div`
 
   .container {
     width: 98%;
+    margin: 0 auto;
 
     @media (min-width: 576px) {
       width: 540px;
