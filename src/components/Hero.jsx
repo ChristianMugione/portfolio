@@ -3,7 +3,7 @@ import coder from "/hero-coding-future.jpeg";
 import { useNavigate } from "react-router-dom";
 import { Portfolio } from "./Portfolio";
 import { Contact } from "./Contact";
-import { BsTwitterX, BsYoutube } from "react-icons/bs";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 export const Hero = () => {
   const navigate = useNavigate();
@@ -27,10 +27,21 @@ export const Hero = () => {
                 <button>Contacto</button>
               </a>
             </div>
-            <div className="social">
-              <BsTwitterX />
-              <BsYoutube />
-            </div>
+            <ul className="social">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/christian-mugione"
+                  target="_blank"
+                >
+                  <BsLinkedin />
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/ChristianMugione" target="_blank">
+                  <BsGithub />
+                </a>
+              </li>
+            </ul>
           </div>
           <div className="image">
             <img src={coder} alt="" />
