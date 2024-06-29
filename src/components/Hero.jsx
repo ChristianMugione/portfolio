@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import coder from "/hero-coding-future.jpeg";
-import { useNavigate } from "react-router-dom";
 import { Portfolio } from "./Portfolio";
 import { Contact } from "./Contact";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 export const Hero = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       <StyledHero id="hero">
@@ -27,21 +24,6 @@ export const Hero = () => {
                 <button>Contacto</button>
               </a>
             </div>
-            <ul className="social">
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/christian-mugione"
-                  target="_blank"
-                >
-                  <BsLinkedin />
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/ChristianMugione" target="_blank">
-                  <BsGithub />
-                </a>
-              </li>
-            </ul>
           </div>
           <div className="image">
             <img src={coder} alt="" />
@@ -50,6 +32,21 @@ export const Hero = () => {
             <span className="left"></span>
             <span className="right"></span>
           </div>
+          <ul className="social">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/christian-mugione"
+                target="_blank"
+              >
+                <BsLinkedin />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ChristianMugione" target="_blank">
+                <BsGithub />
+              </a>
+            </li>
+          </ul>
         </div>
       </StyledHero>
       <Portfolio />
@@ -59,12 +56,12 @@ export const Hero = () => {
 };
 
 const StyledHero = styled.section`
-  height: 89dvh;
+  height: 100dvh;
   color: var(--text-200);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 70px 0 0 0;
+  /* margin: 70px 0 0 0; */
   background-image: url("/hero-coding-future.jpeg");
   background-size: cover;
   background-position: center;
@@ -103,11 +100,14 @@ const StyledHero = styled.section`
 
   .container {
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
     gap: 8px;
-    height: 100dvh;
+    height: 100%;
     width: 100dvw;
     /* border: 1px solid #f0f0f0; */
     padding: 1px;
+    padding-top: 60px;
   }
 
   .text {
@@ -233,12 +233,6 @@ const StyledHero = styled.section`
     }
   }
 
-  @media (min-width: 576px) {
-    .container {
-      /* max-width: 720px; */
-    }
-  }
-
   @media (min-width: 768px) {
     background-image: none;
 
@@ -258,16 +252,23 @@ const StyledHero = styled.section`
     .container {
       /* max-width: 960px; */
       position: relative;
+      height: auto;
+      display: flex;
     }
 
     .text {
       position: relative;
+      margin: auto;
       top: unset;
       left: unset;
       padding: 0;
       width: 50%;
-      height: 80%;
+      height: 100%;
       backdrop-filter: unset;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .btns {
@@ -316,3 +317,9 @@ const StyledHero = styled.section`
     }
   }
 `;
+
+if (import.meta.hot) {
+  import.meta.hot.accept(() => {
+    window.location.reload();
+  });
+}

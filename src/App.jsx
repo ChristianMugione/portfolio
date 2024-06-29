@@ -9,6 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { closeMenu } from "./redux/reducer";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { Messages } from "./components/Messages";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
         <Route path="/portfolio" exact element={<Portfolio />} />
         <Route path="/contact" exact element={<Contact />} />
       </Routes>
+      <Messages />
       <SpeedInsights />
     </AppWrapper>
   );

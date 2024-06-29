@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import { useFormik } from "formik";
 import validationSchema from "../formik/validationSchema";
+import { BsClipboard } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { openMessage } from "../redux/reducer";
 
 export const Contact = () => {
   const copyBtn = document.getElementById("copy-btn");
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: {
@@ -21,6 +25,13 @@ export const Contact = () => {
           },
           body: JSON.stringify(values),
         });
+
+        dispatch(
+          openMessage({
+            text: "Email sent successfully!",
+            time: 3,
+          })
+        );
       } catch (error) {
         console.error(error);
       }
@@ -46,9 +57,7 @@ export const Contact = () => {
           <p>¿Tienes una pregunta o quieres trabajar juntos?</p>
           <div className="email-section">
             <label>chmugione@gmail.com</label>
-            <button id="copy-btn" onClick={copyMail}>
-              Copy
-            </button>
+            <BsClipboard id="copy-btn" onClick={copyMail} />
           </div>
         </div>
 
@@ -157,12 +166,16 @@ const StyledContact = styled.section`
     gap: 8px;
     align-items: center;
     justify-content: center;
-    padding: 0.2em 0.5em;
+    padding: 0.4em 1em;
     border: 1px solid darkgray;
     border-radius: 0.8em;
 
     label {
       font-size: 1.1em;
+    }
+
+    #copy-btn {
+      cursor: pointer;
     }
   }
 
