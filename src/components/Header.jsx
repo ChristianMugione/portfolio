@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeMenu, openMenu } from "../redux/reducer";
 import { FaBars } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const [opened, setOpened] = useState("flex");
   const menuOpened = useSelector((state) => state.menuReducer.menuOpened);
   const dispatch = useDispatch();
-  // const opened1 = { is: "flex" };
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,7 +43,9 @@ export const Header = () => {
   return (
     <StyledHeader opened={menuOpened}>
       <div className="container">
-        <div className="title">Christian Mugione</div>
+        <div className="title" onClick={() => navigate("/")}>
+          Christian Mugione
+        </div>
         {menuOpened && <Navbar />}
         <div className="burger-btn">
           <FaBars onClick={toggleMenu} />
@@ -71,11 +74,7 @@ const StyledHeader = styled.header`
     top: 60px;
     height: calc(100dvh - 60px);
     width: 100%;
-    /* display: ${(props) => props.opened}; */
     display: ${(props) => (props.opened ? "flex" : "none")};
-    /* display: none; */
-
-    // background-color: lightgray;
 
     backdrop-filter: blur(4px);
     content: "";
@@ -85,9 +84,6 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* border: 1px solid white; */
-
-    /* background-color: lightgray; */
   }
 
   .title {
